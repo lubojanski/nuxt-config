@@ -26,6 +26,7 @@ module.exports = {
     */
     extend (config, ctx) {
       if (ctx.dev && ctx.isClient) {
+        config['target'] = 'node'
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
@@ -35,7 +36,18 @@ module.exports = {
         {
           test: /\.js$/,
           loader: 'babel-loader',
+          options: {
+            presets: [
+              ["env", { "modules": false }],
+              "stage-2"
+            ],
+            plugins: ["transform-runtime"],
+          },
           exclude: /(node_modules)/
+        },
+        {
+          test: /\.json$/,
+          loaders: ['json-loader']
         })
       }
     }

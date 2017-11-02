@@ -18,6 +18,7 @@
 </template>
 
 <script>
+
 import MoltinService from '../middleware/moltin'
 
 export default {

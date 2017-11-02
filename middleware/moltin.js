@@ -1,3 +1,4 @@
+import webpack from 'webpack'
 import { gateway as MoltinGateway } from '@moltin/sdk'
 
 const Moltin = MoltinGateway({
