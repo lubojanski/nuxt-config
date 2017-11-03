@@ -3,14 +3,14 @@
       <div class="col-md-8 offset-md-2 text-center">
         <div class="row">
           <div class="col-md-5 product-image">
-            <img :src="product.included.files[0].link.href" alt="">
+           <!-- <img :src="product.included.files[0].link.href" alt=""> -->
           </div>
           <div class="col-md-7 product-data">
-            <h2>{{ product.data[0].name }}</h2>
+            <!-- <h2>{{ product.data[0].name }}</h2>
             <p class="price">{{ product.data[0].meta.display_price.with_tax.formatted }}</p>
             <hr />
             <p>{{ product.data[0].description }}</p>
-            <p><a href="#" class="btn btn-primary" v-on:click.prevent="addToCart(product.data[0].id)">Add to cart</a></p>
+            <p><a href="#" class="btn btn-primary" v-on:click.prevent="addToCart(product.data[0].id)">Add to cart</a></p> -->
           </div>
         </div>
       </div>
@@ -27,7 +27,11 @@ export default {
     }
   },
   beforeMount () {
+    MoltinService.authenticate().then((response) => {
+      console.log('authenticated', response)
+    })
     MoltinService.findBySlug(this.$route.params.slug).then((response) => {
+      console.log('response: ', response)
       this.product = response
     })
   },

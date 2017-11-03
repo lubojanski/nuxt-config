@@ -1,8 +1,8 @@
-import webpack from 'webpack'
+// import webpack from 'webpack'
 import { gateway as MoltinGateway } from '@moltin/sdk'
 
 const Moltin = MoltinGateway({
-  client_id: 'j6hSilXRQfxKohTndUuVrErLcSJWP15P347L6Im0M4'
+  client_id: 'ZndIRfMSAIKGWZvZsk0BZJMQ54BOuPa6qCev7aIu9E'
 })
 
 export default {
@@ -12,6 +12,7 @@ export default {
   },
 
   findBySlug (slug) {
+    console.log('slug: ', slug)
     return Moltin.Products.Filter({
       eq: {
         slug: slug
@@ -33,6 +34,9 @@ export default {
 
   pay (orderId, paymentData) {
     return Moltin.Orders.Payment(orderId, paymentData)
+  },
+  authenticate () {
+    return Moltin.Authenticate()
   }
 
 }

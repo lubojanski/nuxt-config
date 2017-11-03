@@ -13,6 +13,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  
   /*
   ** Customize the progress bar color
   */
@@ -21,6 +22,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+
     /*
     ** Run ESLint on save
     */
@@ -50,6 +52,9 @@ module.exports = {
           loaders: ['json-loader']
         })
       }
+    },
+    extend (config) {
+      config.node = { fs: 'empty' };
     }
   }
 }
