@@ -17,7 +17,7 @@
     </div>
 </template>
 <script>
-import MoltinService from '../middleware/moltin.js'
+import MoltinService from '../../middleware/moltin.js'
 
 export default {
   name: 'product',
@@ -27,11 +27,9 @@ export default {
     }
   },
   beforeMount () {
-    MoltinService.authenticate().then((response) => {
-      console.log('authenticated', response)
-    })
     MoltinService.findBySlug(this.$route.params.slug).then((response) => {
-      console.log('response: ', response)
+      console.log('this', this)
+      console.log('response: ', this.$route)
       this.product = response
     })
   },

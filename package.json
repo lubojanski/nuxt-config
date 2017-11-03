@@ -2,7 +2,7 @@
   "name": "nuxt-storefront",
   "version": "1.0.0",
   "description": "Storefront based on Moltin, Vue, Nuxt and Firebase",
-  "author": "jadczakd <jadczak.d@gmail.com>",
+  "author": "jadczakd <jadczak.d@gmail.com> and Woj now lol",
   "private": true,
   "scripts": {
     "dev": "nuxt",

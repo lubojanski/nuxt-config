@@ -97,7 +97,7 @@ export default {
   }
 
   .product-image img {
-    max-height: 100%;
-    max-width: 100%;
+    max-height: 100px;
+    max-width: 100px;
   }
 </style>
